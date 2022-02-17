@@ -1,14 +1,41 @@
-<p style="color: green"><%= notice %></p>
+<style>
+.myDiv {  
+  margin: auto;
+  width: 60%;
+  border: 0px;
+  padding: 10px;
+}
+</style>
 
-<h1>Users</h1>
+<div class="myDiv">
+  <p style="color: green"><%= notice %></p>
+  <h1>Users</h1>
 
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-  <% end %>
+  <p><%= button_to 'NEW USER', new_user_path, method: :get%></p>
+
+  <table cellspacing ="1" width="50%" align="left" >
+    <thead>
+      <tr class="th" align="left">
+        <th width="30px">ID</th>
+        <th width="300x">Name</th>
+        <th width="150px">Role</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+      <tbody align="left">    
+      <% @users.each do |user| %>    
+        <tr class="td">
+          <td><%= user.id%></td>
+          <td><%= link_to user.name, user%></td>        
+          <td><%= user.role %></td>                   
+          <td><%= link_to "Delete", user_path(user), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %>
+        </tr>     
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New user", new_user_path %>
+

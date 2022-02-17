@@ -1,3 +1,13 @@
+<style>
+.myDiv {  
+  margin: auto;
+  width: 60%;
+  border: 0px;
+  padding: 10px;
+}
+</style>
+
+<div class="myDiv">
 <h1>Editing user</h1>
 
 <%= render "form", user: @user %>
@@ -7,4 +17,5 @@
 <div>
   <%= link_to "Show this user", @user %> |
   <%= link_to "Back to users", users_path %>
+</div>
 </div>

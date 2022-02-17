@@ -1,10 +1,22 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @user %>
+<style>
+.myDiv {  
+  margin: auto;
+  width: 60%;
+  border: 0px;
+  padding: 10px;
+}
+</style>
 
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
+<div class="myDiv">
+  <p style="color: green"><%= notice %></p>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
+  <%= render @user %>
+
+  <div>
+    <%= link_to "Edit this user", edit_user_path(@user) %>     
+    <p><%= button_to "Destroy this user", @user, method: :delete %></p>  
+    <h4><%= link_to "BACK TO USERS", users_path %></h4>
+  </div>
 </div>
+
