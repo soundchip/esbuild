@@ -10,13 +10,13 @@
 
 <div class="myDiv">
   <p style="color: green"><%= notice %></p>
+  <p><%= button_to "Destroy this user", @user, method: :delete %></p> 
 
   <%= render @user %>
 
   <div>
-    <%= link_to "Edit this user", edit_user_path(@user) %>     
-    <p><%= button_to "Destroy this user", @user, method: :delete %></p>  
-    <h4><%= link_to "BACK TO USERS", users_path %></h4>
+    <%= link_to "Edit this user", edit_user_path(@user) %> |      
+    <%= link_to "BACK TO USERS", users_path %>
   </div>
 </div>
 
